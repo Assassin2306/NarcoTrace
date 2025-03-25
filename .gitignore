@@ -1,0 +1,135 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio files
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pfx
+*.publishsettings
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# NuGet Packages
+*.nupkg
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Secrets and sensitive data
+appsettings.json
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Staging.json
+!appsettings.template.json
+!appsettings.example.json
+.env
+.env.*
+!.env.example
+secrets/
+**/secrets/
+*.pem
+*.key
+*.pfx
+*.p12
+*.cer
+*.crt
+connectionstrings.json
+credentials.json
+
+# Additional SSH and security patterns
+.ssh/
+ssh_host_*_key
+ssh_host_*_key.pub
+*.ssh
+*_key
+*_key.pub
+*.keystore
+*.jks
+private_key
+*/private_key
+id_dsa*
+identity
+known_hosts
+authorized_keys
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.npm
+.yarn
+.pnp.*
+
+# Test keys and certificates
+**/test/**/**.pem
+**/test/**/**.key
+**/test/**/**.crt
+**/test/**/**.pfx
+**/test/**/**.p12
+test_*_key*
+test_*_cert*
+**/public-encrypt/test/**
+
+# Specific test key patterns
+**/public-encrypt/test/test_rsa_privkey.pem
+**/public-encrypt/test/test_rsa_pubkey.pem
+**/test/**/*privkey*
+**/test/**/*pubkey*
+
+# More specific exclusions
+**/public-encrypt/
+**/test_rsa_*
+**/private_*
+**/node_modules/**/test/
+
+# Windows specific
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.bat
+!clean-push.bat
+!new-push.bat
+exclude.txt
+
+# Django settings
+**/settings.py
+!**/settings.template.py
+**/local_settings.py

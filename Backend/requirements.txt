@@ -1,0 +1,9 @@
+django==4.2.10
+djangorestframework==3.14.0
+telebot==0.0.5
+pyTelegramBotAPI==4.14.0
+requests==2.31.0
+transformers==4.36.2
+torch==2.1.2
+tensorflow==2.15.0.post1
+django-cors-headers==4.3.1 
