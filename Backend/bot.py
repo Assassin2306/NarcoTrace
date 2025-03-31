@@ -5,18 +5,28 @@ import os
 import json
 from datetime import datetime
 import logging
+from dotenv import load_dotenv
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
+# Load environment variables
+load_dotenv()
+
 # Set up Django settings
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')  
 django.setup()
 
-# Initialize the bot
-TOKEN = '7542364390:AAERWwMOx0gipfrlsBQ1Kga3YDfRS2BXl8I'  
-bot = telebot.TeleBot(TOKEN)
+# Initialize the bot with safe token handling
+try:
+    TOKEN = os.getenv('NARCOTRACE_BOT_TOKEN')
+    if not TOKEN:
+        raise ValueError("No NARCOTRACE_BOT_TOKEN set in environment")
+    bot = telebot.TeleBot(TOKEN)
+except Exception as e:
+    logger.error(f"Failed to initialize bot: {str(e)}")
+    raise
 
 def send_to_django(message, user_id, chat_id):
     url = 'http://127.0.0.1:8000/flagged_message/'  # Make sure this matches the Django URL pattern

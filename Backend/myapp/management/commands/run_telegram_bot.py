@@ -5,6 +5,11 @@ import logging
 from datetime import datetime
 from django.core.management.base import BaseCommand
 from django.conf import settings
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Set up logging
 logger = logging.getLogger(__name__)
@@ -17,8 +22,13 @@ class Command(BaseCommand):
         self.run_bot()
 
     def run_bot(self):
-        # Initialize the bot
-        TOKEN = getattr(settings, 'TELEGRAM_BOT_TOKEN', '7542364390:AAERWwMOx0gipfrlsBQ1Kga3YDfRS2BXl8I')
+        # Initialize the bot with environment variable
+        TOKEN = os.getenv('NARCOTRACE_BOT_TOKEN')
+        if not TOKEN:
+            error_msg = "No NARCOTRACE_BOT_TOKEN set in environment"
+            logger.error(error_msg)
+            self.stdout.write(self.style.ERROR(error_msg))
+            return
         bot = telebot.TeleBot(TOKEN)
 
         # Define the send_to_django function
@@ -99,4 +109,4 @@ class Command(BaseCommand):
             bot.polling(none_stop=True)
         except Exception as e:
             self.stdout.write(self.style.ERROR(f"Bot error: {e}"))
-            logger.error(f"Bot polling error: {e}") 
+            logger.error(f"Bot polling error: {e}")

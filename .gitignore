@@ -120,6 +120,7 @@ test_*_cert*
 **/private_*
 **/node_modules/**/test/
 
+.txt
 # Windows specific
 Thumbs.db
 Desktop.ini
@@ -127,9 +128,37 @@ $RECYCLE.BIN/
 *.bat
 !clean-push.bat
 !new-push.bat
+!check-secrets.bat
 exclude.txt
 
 # Django settings
 **/settings.py
 !**/settings.template.py
 **/local_settings.py
+
+# Additional security
+sensitive_files.txt
+**/tokens.txt
+**/secrets.txt
+clean-secrets.bat
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# ML Models and data
+**/models/
+**/Roberta/
+*.model
+*.bin
+*.h5
+*.pkl
+*.joblib
+
+# Additional security
+.history
+.vscode/
+*.log
+db.sqlite3

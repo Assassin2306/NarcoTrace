@@ -26,7 +26,7 @@ from .serializers import FlaggedMessageSerializer
 logger = logging.getLogger(__name__)
 
 # Load tokenizer and model
-model_path = "D:\Roberta"
+model_path = os.getenv('ROBERTA_MODEL_PATH', 'D:\Roberta')
 tokenizer = RobertaTokenizer.from_pretrained(model_path)
 model = TFRobertaForSequenceClassification.from_pretrained(model_path)
   #change start
