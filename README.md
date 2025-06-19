@@ -3,6 +3,15 @@
 **NarcoTrace** is a full-stack intelligence platform for tracing illicit narcotics networks, combining a Django-powered AI backend with a React dashboard frontend and a Telegram bot interface. Investigators can upload shipment manifests, run AI-driven analysis (via Transformers models), visualize trends and geospatial data, and receive real-time alerts in Telegram.
 
 ---
+## Collaborators
+
+- [Aayush Meghal](https://github.com/Assassin2306)  
+- [Atharva Dhavale](https://github.com/Atharva-Dhavale)  
+- [Harshvardhan Bhosale](https://github.com/Harshbhosale05)  
+- [Sarish Sonawane](https://github.com/Sarish05)  
+- [Kartik Sirsilla](https://github.com/kartiksirsilla09)  
+- [Sakshi Chougule](https://github.com/chougulesakshi1311)
+
 
 ## Table of Contents
 
